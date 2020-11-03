@@ -1,0 +1,38 @@
+{% extends 'blog/base.html' %}
+
+
+{% block text %}
+
+  
+
+
+
+    <div class="container">
+        
+        <div class="card oldpage">
+            <div class="card-body">
+              <h5 class="card-title">{{ detail_blog.title }}</h5>
+              <p class="card-text detail">{{ detail_blog.body }}</p>
+            </div>
+          </div>
+        <br>
+        <br>
+        
+      
+        <div >
+            <p class="float-right">
+                <a href="{% url 'home' %}">Back to Home</a>
+            </p>
+        </div>
+    </div>
+    
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+{% endblock text %}

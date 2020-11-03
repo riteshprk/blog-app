@@ -1,0 +1,96 @@
+{% extends 'blog/base.html' %}
+
+{% block text %}
+<div class="container ">
+        <!--Section: Contact v.2-->
+        <section class="mb-4">
+
+            <!--Section heading-->
+            <h2 class="text-center my-4 contact">Contact us</h2>
+            <!--Section description-->
+            <h5 class="text-center contact">Do you have any questions? Please do not hesitate to
+                contact me directly.</h5>
+
+            <div class="row ml-5 justify-content-center">
+                <!--Grid column-->
+                <div class="col-md-9 mb-md-0 mb-5 ">
+                    <form  id="contact-form" name="contact-form" action="{% url 'contacts' %}" method="POST">
+                        {% csrf_token %}
+                        <!--Grid row-->
+                        <div class="row">
+
+                            <!--Grid column-->
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="name" name="name" class="form-control">
+                                    <label for="name" class="contact">Your name</label>
+                                </div>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="email" name="email" class="form-control">
+                                    <label for="email" class="contact">Your email</label>
+                                </div>
+                            </div>
+                            <!--Grid column-->
+
+                        </div>
+                        <!--Grid row-->
+
+                        <!--Grid row-->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="subject" name="subject" class="form-control">
+                                    <label for="subject" class="contact">Subject</label>
+                                    <select class="browser-default custom-select mb-4">
+                                        <option value="" disabled>Choose option</option>
+                                        <option value="1" selected>Feedback</option>
+                                        <option value="2">Report a bug</option>
+                                        <option value="3">Feature request</option>
+                                        <option value="4">New Release</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Grid row-->
+
+                        <!--Grid row-->
+                        <div class="row">
+
+                            <!--Grid column-->
+                            <div class="col-md-12">
+
+                                <div class="md-form">
+                                    <textarea type="text" id="message" name="message" rows="2"
+                                              class="form-control md-textarea"></textarea>
+                                    <label for="message" class="contact">Your message</label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--Grid row-->
+
+                    </form>
+
+                    <div class="text-center text-md-left">
+                        <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+                    
+                        <p class="float-right">
+                            <a href="{% url 'home' %}">Back to Home</a>
+                        </p>
+                    </div>
+                    <div class="status"></div>
+                </div>
+            </div>
+
+        </section>
+        <!--Section: Contact v.2-->
+    </div>
+
+
+
+{% endblock text %}

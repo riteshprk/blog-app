@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+<!-- Here start My Portfolio Pojects -->
+{% block text %}
+
+<div class="container">
+  <div class="row">
+    {% for x in var_1.all %}
+    <div class="col-4 d-flex align-items-stretch mb-5">
+      <div class="card tiles" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{x.title}}</h5>
+          
+          <p class="card-text">{{x.summary}}</p>
+          <h6 class="card-subtitle mb-2 text-muted">{{x.pub_date}}</h6>
+          
+          <a href="{% url 'detail' x.id %}" class="card-link">View Full Post</a>
+          
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div> 
+</div>
+
+{% endblock text %}
